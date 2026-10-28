@@ -1,0 +1,21 @@
+image:
+  repository: configmap-watcher
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicas: 1
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 128Mi
+  requests:
+    cpu: 10m
+    memory: 64Mi
+
+healthProbePort: 8081
+
+controller:
+  targetNamespace: controller-playground
+  targetDeployment: nginx-deployment
+  configmapName: nginx-app-config

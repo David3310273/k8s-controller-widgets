@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-app-config
+  namespace: controller-playground
+data:
+  service-configs: |
+    {
+      "serviceConfigs": {
+        "workerCount": 4,
+        "service": { "port": 8080 }
+      }
+    }
