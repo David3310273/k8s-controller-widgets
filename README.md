@@ -96,8 +96,6 @@ templates/
 ├── clusterrole.yaml        # RBAC: what your controller needs access to
 ├── clusterrolebinding.yaml
 ├── deployment.yaml          # Runs your controller
-├── <your-sample-resource>.yaml   # Sample resources for testing
-└── <your-configmap>.yaml         # ConfigMap your controller watches (if applicable)
 Chart.yaml
 values.yaml
 ```
@@ -137,7 +135,7 @@ Add `// +kubebuilder:rbac` annotations above your reconciler struct so
 ```bash
 cd <plugin-name>
 
-# Build, import to k3d, and deploy
+# Build, import to k3d or other k8s clusters, and deploy
 make k3d-deploy CLUSTER=k3d-default NAMESPACE=controller-playground
 
 # Watch logs
