@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- hci.example.com_v1_azurehcinode.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

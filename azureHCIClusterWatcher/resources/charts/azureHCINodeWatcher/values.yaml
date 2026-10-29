@@ -1,0 +1,16 @@
+image:
+  repository: azure-hci-cluster-watcher
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicas: 1
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 128Mi
+  requests:
+    cpu: 10m
+    memory: 64Mi
+
+healthProbePort: 8081
