@@ -59,7 +59,7 @@ This generates `cmd/`, `config/`, `test/`, `Makefile`, `Dockerfile`, `go.mod`, e
 # Example: create a controller that watches ConfigMaps
 kubebuilder create api \
   --controller true \
-  --core true \
+  --core true \ # using --resource=true to create a crd resource
   --group core \
   --kind ConfigMap \
   --version v1

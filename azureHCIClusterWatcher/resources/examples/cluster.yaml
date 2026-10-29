@@ -1,0 +1,40 @@
+# same domain as the crd
+# only pick useful data for mock, please refer to the Microsoft Azure HCI doc for real data:
+# https://learn.microsoft.com/en-us/rest/api/stackhci/clusters/list-by-subscription?view=rest-stackhci-2024-04-01
+# https://learn.microsoft.com/en-us/rest/api/stackhci/arc-settings/list-by-cluster
+apiVersion: "azureHCIClusters.hci.example.com/v1"
+kind: AzureHCICluster
+metadata:
+  name: demo-azure-HCI-cluster
+spec:
+  nodes: [
+    {
+      "manufacturer": "Dell Inc.",
+      "model": "EMC AX740",
+      "osName": "Azure Stack HCI",
+      "osVersion": "10.0.17777.1061",
+      "serialNumber": "Q45CZC3",
+      "coreCount": 8,
+      "memoryInGiB": 128,
+      "oemActivation": "Enabled",
+      "state": "Connected",
+      "networkInterfaces": [
+        {
+          "name": "Ethernet",
+          "macAddress": "00-11-22-33-44-55",
+          "ipAddresses": [{
+            "address": "192.168.1.10",
+            "ipAddressVersion": "IPv4",
+            "subnet": {
+              "addressPrefix": "192.168.1.0/24"
+            }
+          }]
+        }
+      ]
+    }
+  ]
+  clusterName: "cluster1"
+  connectivityStatus: "Connected"
+  clusterId: "a76ac23a-1819-4e82-9410-e3e4ec3d1425"
+  cloudManagementEndpoint: "https://cloudmanagementendpoint.com"
+  manufacturer: "Dell Inc."

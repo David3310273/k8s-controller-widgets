@@ -1,0 +1,80 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: azureHCIClusters.hci.example.com
+spec:
+  group: hci.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                nodes:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      manufacturer:
+                        type: string
+                      model:
+                        type: string
+                      osName:
+                        type: string
+                      osVersion:
+                        type: string
+                      serialNumber:
+                        type: string
+                      coreCount:
+                        type: integer
+                      memoryInGiB:
+                        type: integer
+                      oemActivation:
+                        type: string
+                      state:
+                        type: string
+                      networkInterfaces:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            macAddress:
+                              type: string
+                            ipAddresses:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  address:
+                                    type: string
+                                  ipAddressVersion:
+                                    type: string
+                                  subnet:
+                                    type: object
+                                    properties:
+                                      addressPrefix:
+                                        type: string
+                clusterName:
+                  type: string
+                connectivityStatus:
+                  type: string
+                clusterId:
+                  type: string
+                cloudManagementEndpoint:
+                  type: string
+                manufacturer:
+                  type: string
+  scope: Namespaced
+  names:
+    plural: azureHCIClusters
+    singular: azureHCICluster
+    kind: AzureHCICluster
+    shortNames:
+    - azureHCICluster
